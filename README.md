@@ -32,7 +32,7 @@ This project was built from scratch and later refined using Cursor AI to resolve
 ## Tech Stack
 
 | Technology | Purpose |
-|------------|---------|
+| ---------- | ------- |
 | **React 18** | UI framework |
 | **Axios** | HTTP client for TMDB API |
 | **TMDB API** | Movie and TV show data |
@@ -51,12 +51,14 @@ This project was built from scratch and later refined using Cursor AI to resolve
 ### Setup
 
 1. **Clone the repository**
+
    ```bash
    git clone https://github.com/your-username/netflix-clone.git
    cd netflix-clone
    ```
 
 2. **Install dependencies**
+
    ```bash
    npm install
    ```
@@ -65,17 +67,21 @@ This project was built from scratch and later refined using Cursor AI to resolve
    - Copy `.env.example` to `.env`
    - Get a free API key from [TMDB](https://www.themoviedb.org/settings/api)
    - Add it to `.env`:
-     ```
+
+     ```env
      REACT_APP_TMDB_API_KEY=your_api_key_here
      ```
 
 4. **Run locally**
+
    ```bash
    npm start
    ```
+
    Open [http://localhost:3000](http://localhost:3000).
 
 5. **Build for production**
+
    ```bash
    npm run build
    ```
@@ -95,21 +101,26 @@ This project is designed to be deployed with **Firebase Hosting**. Firebase Host
 ### Deploy to Firebase Hosting
 
 1. **Install Firebase CLI**
+
    ```bash
    npm install -g firebase-tools
    ```
 
 2. **Login and initialize**
+
    ```bash
    firebase login
    firebase init hosting
    ```
+
+   When prompted:
    - Select "Use an existing project" or create one
    - Set the public directory to `build` (CRA output)
    - Configure as a single-page app: **Yes**
    - Do not overwrite `index.html`
 
 3. **Build and deploy**
+
    ```bash
    npm run build
    firebase deploy
@@ -121,7 +132,7 @@ Your app will be live at `https://your-project-id.web.app`.
 
 ## Project Structure
 
-```
+```text
 src/
 ├── App.js          # Main app, loader, movie selection state
 ├── App.css         # Global app styles
