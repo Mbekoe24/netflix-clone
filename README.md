@@ -1,70 +1,146 @@
-# Getting Started with Create React App
+<<<<<<< Updated upstream
+# netflix-clone
+=======
+# Netflix Clone
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A responsive, Netflix-inspired movie discovery app built with React. Browse trending movies and TV shows, watch trailers, and explore content by genre—all powered by The Movie Database (TMDB) API.
 
-## Available Scripts
+![Netflix Clone](https://img.shields.io/badge/React-18.2-61DAFB?logo=react)
+![TMDB API](https://img.shields.io/badge/TMDB-API-E50914)
 
-In the project directory, you can run:
+## Screenshot
 
-### `npm start`
+![Netflix Clone Screenshot](./screenshot.png)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Features
 
-### `npm test`
+- **Hero Banner** — Featured Netflix Originals with a random selection on each load; scales with viewport on large screens to prevent cropping
+- **Genre Rows** — Horizontally scrollable rows: Netflix Originals, Trending, Top Rated, Boredom Busters, Action, Comedy, Horror, Romance, Documentary, Anime, Sci-Fi, Thriller
+- **Landscape Thumbnails** — All thumbnails display in 16:9 landscape format at a uniform size for a consistent, filled layout
+- **TMDB Logo Overlays** — Thumbnails display official studio logos when available (e.g. Baki-Dou, WWE RAW), with text fallback for titles without logos
+- **Movie Detail Modal** — Click any title to view details, ratings, overview, and an embedded YouTube trailer
+- **Custom Nav Avatar** — Personalized profile avatar in the navigation bar
+- **Hover-to-Scroll Arrows** — Scroll arrows appear on row hover (no background), scale up on hover
+- **Responsive Design** — Optimized for mobile, tablet, and desktop (320px to 1920px+)
+- **Loading State** — Custom loader overlay during initial app load
+- **PWA-Ready** — Web app manifest and meta tags for installability
+- **Polished UI** — Rounded corners (4px) on thumbnails; viewport-scaled section titles (1.4vw)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+## Tech Stack
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+| Technology | Purpose |
+|------------|---------|
+| **React 18** | UI framework |
+| **Axios** | HTTP client for TMDB API |
+| **TMDB API** | Movie and TV show data |
+| **movie-trailer** | YouTube trailer lookup |
+| **react-youtube** | Embedded trailer playback |
+| **Create React App** | Build tooling |
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+---
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Getting Started
 
-### `npm run eject`
+### Prerequisites
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- Node.js 16+ and npm
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Setup
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/your-username/netflix-clone.git
+   cd netflix-clone
+   ```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
 
-## Learn More
+3. **Configure environment**
+   - Copy `.env.example` to `.env`
+   - Get a free API key from [TMDB](https://www.themoviedb.org/settings/api)
+   - Add it to `.env`:
+     ```
+     REACT_APP_TMDB_API_KEY=your_api_key_here
+     ```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+4. **Run locally**
+   ```bash
+   npm start
+   ```
+   Open [http://localhost:3000](http://localhost:3000).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+5. **Build for production**
+   ```bash
+   npm run build
+   ```
 
-### Code Splitting
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Firebase Hosting
 
-### Analyzing the Bundle Size
+This project is designed to be deployed with **Firebase Hosting**. Firebase Hosting is ideal for React single-page apps because it:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- **Serves static assets quickly** — Global CDN with automatic caching
+- **Handles SPA routing** — Rewrites all routes to `index.html` so client-side routing works
+- **Provides HTTPS by default** — Free SSL certificates
+- **Integrates with CI/CD** — Easy deployment via GitHub Actions or Firebase CLI
+- **Scales automatically** — No server management required
 
-### Making a Progressive Web App
+### Deploy to Firebase Hosting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+1. **Install Firebase CLI**
+   ```bash
+   npm install -g firebase-tools
+   ```
 
-### Advanced Configuration
+2. **Login and initialize**
+   ```bash
+   firebase login
+   firebase init hosting
+   ```
+   - Select "Use an existing project" or create one
+   - Set the public directory to `build` (CRA output)
+   - Configure as a single-page app: **Yes**
+   - Do not overwrite `index.html`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+3. **Build and deploy**
+   ```bash
+   npm run build
+   firebase deploy
+   ```
 
-### Deployment
+Your app will be live at `https://your-project-id.web.app`.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+---
 
-### `npm run build` fails to minify
+## Project Structure
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```
+src/
+├── App.js          # Main app, loader, movie selection state
+├── App.css         # Global app styles
+├── Banner.js       # Hero banner with featured content
+├── Row.js          # Scrollable genre rows with logo overlays
+├── MovieDetail.js  # Modal with trailer and details
+├── Nav.js          # Top navigation bar with custom avatar
+├── Footer.js       # Footer with attribution
+├── requests.js     # TMDB API endpoints + getImagesUrl for logos
+├── axios.js        # Axios instance with base URL
+├── assets/         # Local images (e.g. avatar-img.png)
+├── index.js        # Entry point
+└── index.css       # Global styles
+```
+
+---
+
+## License
+
+This project is for educational purposes only. Movie data is provided by [The Movie Database (TMDB)](https://www.themoviedb.org/). Netflix branding and assets are trademarks of Netflix, Inc.
+>>>>>>> Stashed changes
