@@ -44,7 +44,7 @@ function MovieDetail({ movie, onClose }) {
   const youtubeOpts = {
     width: "100%",
     playerVars: {
-      autoplay: 1,
+      autoplay: 0,
       rel: 0,
       modestbranding: 1,
     },
