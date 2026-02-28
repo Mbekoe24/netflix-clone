@@ -1,4 +1,4 @@
-# Netflix Clone
+# Netflix Clone 2.0
 
 A responsive, Netflix-inspired movie discovery app built with React. Browse trending movies and TV shows, watch trailers, and explore content by genre—all powered by The Movie Database (TMDB) API.
 

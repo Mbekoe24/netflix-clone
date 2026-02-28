@@ -161,7 +161,7 @@ function Row({ title, fetchUrl, isLargeRow, onMovieClick, mediaType = "movie" })
           ›
         </button>
       </div>
-    </section>
+    </div>
   );
 }
 
