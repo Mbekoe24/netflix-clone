@@ -4,7 +4,7 @@ import avatarImg from "./assets/avatar-img.png";
 
 function Nav() {
   return (
-    <div className="nav">
+    <nav className="nav" aria-label="Main navigation">
       <div className="nav__contents">
         <img
           className="nav__logo"
@@ -17,7 +17,7 @@ function Nav() {
           alt="User avatar"
         />
       </div>
-    </div>
+    </nav>
   );
 }
 

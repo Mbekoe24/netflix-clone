@@ -21,6 +21,7 @@ function App() {
   return (
     <div className="app">
       <Nav />
+      <main id="main-content" tabIndex={-1}>
       <Banner onMovieSelect={setSelectedMovie} />
       <Row
         title="Netflix Originals"
@@ -92,10 +93,12 @@ function App() {
         />
       )}
       {showLoader && (
-        <div className="app__loaderOverlay">
-          <div className="app__spinner" />
+        <div className="app__loaderOverlay" role="status" aria-live="polite" aria-busy="true">
+          <div className="app__spinner" aria-hidden="true" />
+          <span className="sr-only">Loading content...</span>
         </div>
       )}
+      </main>
       <Footer />
     </div>
   );

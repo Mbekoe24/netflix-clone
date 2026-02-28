@@ -1,9 +1,8 @@
-<<<<<<< Updated upstream
-# netflix-clone
-=======
 # Netflix Clone
 
 A responsive, Netflix-inspired movie discovery app built with React. Browse trending movies and TV shows, watch trailers, and explore content by genre—all powered by The Movie Database (TMDB) API.
+
+This project was built from scratch and later refined using Cursor AI to resolve issues, improve code quality, and add features that enhance the overall experience.
 
 ![Netflix Clone](https://img.shields.io/badge/React-18.2-61DAFB?logo=react)
 ![TMDB API](https://img.shields.io/badge/TMDB-API-E50914)
@@ -143,4 +142,3 @@ src/
 ## License
 
 This project is for educational purposes only. Movie data is provided by [The Movie Database (TMDB)](https://www.themoviedb.org/). Netflix branding and assets are trademarks of Netflix, Inc.
->>>>>>> Stashed changes

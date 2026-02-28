@@ -55,7 +55,13 @@ function MovieDetail({ movie, onClose }) {
   }
 
   return (
-    <section className="movieDetail" onClick={onClose}>
+    <section
+      className="movieDetail"
+      onClick={onClose}
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="movie-detail-title"
+    >
       <div
         className="movieDetail__inner"
         onClick={(event) => event.stopPropagation()}
@@ -73,7 +79,7 @@ function MovieDetail({ movie, onClose }) {
             <YouTube videoId={trailerId} opts={youtubeOpts} />
           </div>
         )}
-        <h2 className="movieDetail__title">{title}</h2>
+        <h2 id="movie-detail-title" className="movieDetail__title">{title}</h2>
         <div className="movieDetail__meta">
           {releaseDate && <span>{releaseDate.slice(0, 4)}</span>}
           {typeof movie.vote_average === "number" && (

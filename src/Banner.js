@@ -49,12 +49,13 @@ function Banner({ onMovieSelect }) {
         </h1>
 
         <div className="banner__buttons">
-          <button className="banner__button" onClick={handleSelectMovie}>
+          <button className="banner__button" onClick={handleSelectMovie} aria-label={`Play ${movie?.title || movie?.name || "featured content"}`}>
             Play
           </button>
           <button
             className="banner__button banner__button--secondary"
             onClick={handleSelectMovie}
+            aria-label={`More info about ${movie?.title || movie?.name || "featured content"}`}
           >
             More Info
           </button>
