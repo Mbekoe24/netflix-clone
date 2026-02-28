@@ -35,6 +35,13 @@
   }
 }
 
+@media (prefers-reduced-motion: reduce) {
+  .app__spinner {
+    animation: none;
+    border-top-color: #e50914;
+  }
+}
+
 @media (max-width: 768px) {
   .app {
     padding-bottom: 32px;

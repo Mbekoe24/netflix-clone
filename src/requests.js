@@ -20,7 +20,7 @@ const requests = {
   fetchAnime: `/discover/movie?api_key=${API_KEY}&with_genres=16`,
   fetchSciFi: `/discover/movie?api_key=${API_KEY}&with_genres=878`,
   fetchThriller: `/discover/movie?api_key=${API_KEY}&with_genres=53`,
-  // high‑rated, fun, rewatchable movies
+  // high-rated, fun, rewatchable movies
   fetchBoredomBusters: `/discover/movie?api_key=${API_KEY}&language=en-US&sort_by=popularity.desc&vote_average.gte=7&with_genres=35,28`,
   getImagesUrl: (mediaType, id) =>
     `/${mediaType}/${id}/images?api_key=${API_KEY}`,

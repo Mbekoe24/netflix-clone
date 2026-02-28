@@ -108,10 +108,19 @@ function Row({ title, fetchUrl, isLargeRow, onMovieClick, mediaType = "movie" })
             return (
               <div
                 key={movie.id}
+                role="button"
+                tabIndex={0}
                 className={`row__posterWrapper ${
                   isLargeRow ? "row__posterWrapper--large" : ""
                 }`}
                 onClick={() => onMovieClick && onMovieClick(movie)}
+                onKeyDown={(e) => {
+                  if ((e.key === "Enter" || e.key === " ") && onMovieClick) {
+                    e.preventDefault();
+                    onMovieClick(movie);
+                  }
+                }}
+                aria-label={`View details for ${name}`}
               >
                 <img
                   className={`row__poster ${
