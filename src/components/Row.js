@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
-import axios from "./axios";
-import requests from "./requests";
+import axios from "../api/axios";
+import requests from "../api/requests";
 import "./Row.css";
 
 const TMDB_IMG_BASE = "https://image.tmdb.org/t/p";

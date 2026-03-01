@@ -96,4 +96,3 @@ function MovieDetail({ movie, onClose }) {
 }
 
 export default MovieDetail;
-

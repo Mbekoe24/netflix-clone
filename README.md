@@ -134,18 +134,24 @@ Your app will be live at `https://your-project-id.web.app`.
 
 ```text
 src/
-├── App.js          # Main app, loader, movie selection state
-├── App.css         # Global app styles
-├── Banner.js       # Hero banner with featured content
-├── Row.js          # Scrollable genre rows with logo overlays
-├── MovieDetail.js  # Modal with trailer and details
-├── Nav.js          # Top navigation bar with custom avatar
-├── Footer.js       # Footer with attribution
-├── requests.js     # TMDB API endpoints + getImagesUrl for logos
-├── axios.js        # Axios instance with base URL
-├── assets/         # Local images (e.g. avatar-img.png)
-├── index.js        # Entry point
-└── index.css       # Global styles
+├── components/       # React components
+│   ├── App.js       # Main app, loader, movie selection state
+│   ├── Banner.js    # Hero banner with featured content
+│   ├── Row.js       # Scrollable genre rows with logo overlays
+│   ├── MovieDetail.js  # Modal with trailer and details
+│   ├── Nav.js       # Top navigation bar with custom avatar
+│   └── Footer.js    # Footer with attribution
+├── api/             # API configuration
+│   ├── axios.js     # Axios instance with base URL
+│   └── requests.js  # TMDB API endpoints + getImagesUrl for logos
+├── __tests__/       # Jest test files
+│   ├── Banner.test.js
+│   ├── Row.test.js
+│   └── MovieDetail.test.js
+├── assets/          # Local images (e.g. avatar-img.png)
+├── index.js         # Entry point
+├── index.css        # Global styles
+└── setupTests.js    # Jest setup (jest-dom)
 ```
 
 ---

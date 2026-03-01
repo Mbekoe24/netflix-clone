@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import axios from "./axios";
-import requests from "./requests";
+import axios from "../api/axios";
+import requests from "../api/requests";
 import "./Banner.css";
 
 function Banner({ onMovieSelect }) {
@@ -71,4 +71,3 @@ function Banner({ onMovieSelect }) {
 }
 
 export default Banner;
-

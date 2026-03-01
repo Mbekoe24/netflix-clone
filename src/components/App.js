@@ -5,7 +5,7 @@ import Banner from "./Banner";
 import Row from "./Row";
 import MovieDetail from "./MovieDetail";
 import Footer from "./Footer";
-import requests from "./requests";
+import requests from "../api/requests";
 
 const LOADER_DURATION_MS = 3000;
 
@@ -105,4 +105,3 @@ function App() {
 }
 
 export default App;
-  

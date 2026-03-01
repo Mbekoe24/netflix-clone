@@ -1,6 +1,6 @@
 import React from "react";
 import "./Nav.css";
-import avatarImg from "./assets/avatar-img.png";
+import avatarImg from "../assets/avatar-img.png";
 
 function Nav() {
   return (
@@ -22,4 +22,3 @@ function Nav() {
 }
 
 export default Nav;
-
