@@ -4,9 +4,10 @@ A responsive, Netflix-inspired movie discovery app built with React. Browse tren
 
 This project was built from scratch and later refined using Cursor AI to resolve issues, improve code quality, and add features that enhance the overall experience.
 
+**[Live Demo](https://moviecloneui.netlify.app)** — Check it out
+
 ![Netflix Clone](https://img.shields.io/badge/React-18.2-61DAFB?logo=react)
 ![TMDB API](https://img.shields.io/badge/TMDB-API-E50914)
-![CLICK HERE TO SEE MY CLONE](https://moviecloneui.netlify.app)
 
 ## Screenshot
 
