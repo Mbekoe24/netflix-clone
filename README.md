@@ -6,6 +6,7 @@ This project was built from scratch and later refined using Cursor AI to resolve
 
 ![Netflix Clone](https://img.shields.io/badge/React-18.2-61DAFB?logo=react)
 ![TMDB API](https://img.shields.io/badge/TMDB-API-E50914)
+![CLICK HERE TO SEE MY CLONE](https://moviecloneui.netlify.app)
 
 ## Screenshot
 
