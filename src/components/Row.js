@@ -8,12 +8,32 @@ const TMDB_IMG_BASE = "https://image.tmdb.org/t/p";
 function Row({ title, fetchUrl, isLargeRow, onMovieClick, mediaType = "movie" }) {
   const [movies, setMovies] = useState([]);
   const [logos, setLogos] = useState({});
+  const [isInView, setIsInView] = useState(false);
   const rowRef = useRef(null);
+  const rowContainerRef = useRef(null);
 
   const truncate = (str, n) =>
     str && str.length > n ? `${str.slice(0, n - 1)}…` : str;
 
   useEffect(() => {
+    const el = rowContainerRef.current;
+    if (!el) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsInView(true);
+        }
+      },
+      { rootMargin: "200px", threshold: 0 }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    if (!isInView) return;
+
     async function fetchData() {
       try {
         let request = await axios.get(fetchUrl);
@@ -32,7 +52,7 @@ function Row({ title, fetchUrl, isLargeRow, onMovieClick, mediaType = "movie" })
       }
     }
     fetchData();
-  }, [fetchUrl, title, mediaType]);
+  }, [isInView, fetchUrl, title, mediaType]);
 
   useEffect(() => {
     if (movies.length === 0) return;
@@ -82,7 +102,7 @@ function Row({ title, fetchUrl, isLargeRow, onMovieClick, mediaType = "movie" })
   };
 
   return (
-    <div className="row">
+    <div className="row" ref={rowContainerRef}>
       <h2 className="row__title">{title}</h2>
       <div className="row__scroll">
         <button
@@ -128,6 +148,7 @@ function Row({ title, fetchUrl, isLargeRow, onMovieClick, mediaType = "movie" })
                   }`}
                   src={`${TMDB_IMG_BASE}/original${imagePath}`}
                   alt={name}
+                  loading="lazy"
                 />
                 <div className="row__posterLogo">
                   {logoPath ? (
@@ -135,6 +156,7 @@ function Row({ title, fetchUrl, isLargeRow, onMovieClick, mediaType = "movie" })
                       className="row__posterLogoImg"
                       src={`${TMDB_IMG_BASE}/${logoPath.endsWith(".svg") ? "original" : "w154"}${logoPath}`}
                       alt=""
+                      loading="lazy"
                     />
                   ) : (
                     <span className="row__posterLogoText">{name}</span>

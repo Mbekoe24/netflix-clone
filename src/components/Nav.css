@@ -39,6 +39,12 @@
   object-fit: cover;
   object-position: center top;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+  transition: transform 450ms;
+  cursor: pointer;
+}
+
+.nav__avatar:hover {
+  transform: scale(1.08);
 }
 
 @media (max-width: 768px) {
